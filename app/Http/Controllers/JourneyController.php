@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Journey;
+use App\Journey;
 
 class JourneyController extends Controller
 {
-    //
+    public function index() 
+    {
+        $journeys = Journey::all();
+        return view('index', compact('journeys'));
+    }
 }
